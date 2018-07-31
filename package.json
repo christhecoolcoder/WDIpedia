@@ -1,0 +1,26 @@
+{
+  "name": "wdipedia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christhecoolcoder/WDIpedia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christhecoolcoder/WDIpedia/issues"
+  },
+  "homepage": "https://github.com/christhecoolcoder/WDIpedia#readme",
+  "dependencies": {
+    "eslint": "^5.2.0",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3",
+    "pg-promise": "^8.4.5"
+  }
+}
