@@ -1,16 +1,16 @@
+
 DROP TABLE IF EXISTS students;
-DROP TABLE IF EXISTS strengths_weakness;
+DROP TABLE IF EXISTS skills;
 
 CREATE TABLE students (
 id SERIAL PRIMARY KEY,
-name VARCHAR (255) UNIQUE,
-description VARCHAR(255),
-created_at TIMESTAMP NOT NULL DEFAULT NOW()
+name VARCHAR (255) UNIQUE
 ); 
 
-CREATE TABLE strengths_weakness (
+CREATE TABLE skills (
 id SERIAL PRIMARY KEY,
-content text,
+skill VARCHAR(255),
+proficient boolean,
 created_at TIMESTAMP NOT NULL DEFAULT NOW()
 ); 
  
