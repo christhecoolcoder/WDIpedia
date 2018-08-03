@@ -7,25 +7,16 @@ const views = require('../controllers/resHandler');
 const studentsRouter = express.Router();
 
 studentsRouter.route('/')
-    .get(controller.index, views.showAll);
-    // .post(controller.createNewSoda, views.handleCreate, views.show404);
+  .get(controller.index, views.showAll);
+
+studentsRouter.route('/:id')
+  .post(controller.createNewSkill, controller.index, views.handleCreate);
 
 // studentRouter.route('/new')
 //     .get(views.handleCreate);
 
 // studentRouter.route('/:id')
 //     .get(controller.getOne, views.showOne, views.show404);
-    
 
 
 module.exports = studentsRouter;
-
-/**
- * 2 Routes + Controller
- *  - /
- *  - /person/:id
- * 
- *  
- */
-
-

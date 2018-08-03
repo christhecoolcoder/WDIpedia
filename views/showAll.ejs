@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <% students.forEach((students)=> { %>
-        <br>
-        <p>students: <%=students.name%></p>
-        <p>Description: <%=students.description%></p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./style.css" />  
+
+        <title>WDIPEDIA | Students</title>
+    </head>
+
+    <body>
+        <% students.forEach((students)=> { %>
+            <br>
+            <p>Student: <%=students.name%></p>
+            <p>Skill: <%=students.skill%></p>
+        
+            <form action="/students/<%=students.id%>" method="post">
+              <input name="skill">    
+            <button type="submit">edit skill</button>
+          </form>
+
         <% }) %>
-</body>
+    </body>
 </html>

@@ -29,12 +29,11 @@
 //     console.log('Port 3000 ready to serve');
 // });
 
-
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const studentsRouter = require('./routes/studentsRouter');
 const path = require('path');
+const studentsRouter = require('./routes/studentsRouter');
 
 const app = express();
 
@@ -45,19 +44,17 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(logger('dev'));
 
+app.use(express.static('public'));
+
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-
-app.use('/student', studentsRouter);
-
+app.use('/students', studentsRouter);
 
 app.get('/', (req, res) => {
-  res.send('home page');
+  res.sendFile(path.join(__dirname, '/', 'index.html'));
 });
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}!`);
 });
-
-
