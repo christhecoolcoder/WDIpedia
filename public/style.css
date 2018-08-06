@@ -1,10 +1,35 @@
-body {
-    background-color: black;
-    color: white;
+#frontpage {
+    background-image: url(https://snappygoat.com/b/c6ec782d202013e1df10cc9a1fc7e578d865966a);
+    color: black;
+    background-size: 30%;
+    background-position-x : 50%;
+    background-position-y : 15%;
+    background-repeat: no-repeat;
+}
+
+#flexwrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  margin-left: 50%;
+}
+
+#name{
+  font-weight: bold;
+}
+
+#flexwrap p{
+  display: block;
 }
 
 h1 {
-    font-size: 200px;
-    padding-left: 170px;
-    padding-top: 50px;
+    font-size: 150px;
+    padding-left: 310px;
+    padding-top: 350px;
 }
