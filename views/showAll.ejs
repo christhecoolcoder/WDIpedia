@@ -12,22 +12,22 @@
     <body id='flexwrap'>
 
 
-        <% skills.forEach((students)=> { %>
+        <% students.forEach((skillRecord)=> { %>
           <div>
-            <p id='name'>students: <%=students.name%></p>
-            <p>Skill: <%=students.skill%></p>
-            <p>is good at?: <%=students.proficient%></p>
+            <p id='name'>Student: <%=skillRecord.name%></p>
+            <p>Skill: <%=skillRecord.skill%></p>
+            <p>is good at?: <%=skillRecord.proficient%></p>
             
-            <form action="/students/<%=students.id%>/edit" method="post">
+            <form action="/students/<%=skillRecord.id%>/edit" method="post">
               <input name="skill">    
               <button type="submit">edit skill</button>
             </form> 
             
-            <form action="/students/<%=students.id%>/delete" method="post">   
+            <form action="/students/<%=skillRecord.id%>/delete" method="post">   
               <button type="submit">delete skill</button>
             </form>
 
-            <form action="/students/<%=students.student_id%>/new" method="post">
+            <form action="/students/<%=skillRecord.student_id%>/new" method="post">
               <button type="submit">add skill</button>
             </form>
           </div>      

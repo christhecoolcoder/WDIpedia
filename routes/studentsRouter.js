@@ -18,6 +18,8 @@ studentsRouter.route('/:id/delete')
 studentsRouter.route('/:id/new')
   .post(studentController.addNewSkill, studentController.index, views.handleCreate);
 
+studentsRouter.route('/deleteempty')
+  .get(studentController.deleteEmpty, views.handleCreate);
 
 // studentRouter.route('/:id')
 //     .get(controller.getOne, views.showOne, views.show404);

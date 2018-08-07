@@ -25,12 +25,16 @@ function create({ id, skill }) {
 }
 
 function deleteSkill(id) {
-  console.log('Id Received By Delete', id);
-
   return db.any(`
     DELETE FROM skills
     WHERE id = $1
   `, [id]);
+}
+
+function deleteEmpty() {
+  return db.none(`
+    DELETE FROM skills WHERE student_id = null
+  `);
 }
 
 module.exports = {
@@ -38,4 +42,5 @@ module.exports = {
   update,
   create,
   deleteSkill,
+  deleteEmpty,
 };

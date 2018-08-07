@@ -5,7 +5,7 @@ module.exports = {
     return studentsdb
       .findAll()
       .then((students) => {
-        // students.sort((studentA, studentB) => studentA.id - studentB.id);
+        students.sort((studentA, studentB) => studentA.student_id - studentB.student_id);
 
         /* eslint-disable-next-line no-unused-expressions */
         res.locals.students = students;
@@ -50,5 +50,8 @@ module.exports = {
       .deleteSkill(id)
       .then(() => next())
       .catch((e) => { next(e); });
+  },
+  deleteEmpty(req, res, next) {
+    return studentsdb.deleteEmpty().then(() => next()).catch((e) => { next(e); });
   },
 };
