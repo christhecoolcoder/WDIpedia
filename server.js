@@ -50,6 +50,8 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// app.use(methodoverride('_method'));
+
 app.use('/students', studentsRouter);
 
 app.get('/', (req, res) => {

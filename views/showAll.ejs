@@ -12,26 +12,25 @@
     <body id='flexwrap'>
 
 
-        <% students.forEach((students)=> { %>
-        <div>
-          <p id='name'>Student: <%=students.name%></p>
-          <p>Skill: <%=students.skill%></p>
-          <p>is good at?: <%=students.proficient%></p>
-          
-            <form action="/students/<%=students.id%>" method="post">
+        <% skills.forEach((students)=> { %>
+          <div>
+            <p id='name'>students: <%=students.name%></p>
+            <p>Skill: <%=students.skill%></p>
+            <p>is good at?: <%=students.proficient%></p>
+            
+            <form action="/students/<%=students.id%>/edit" method="post">
               <input name="skill">    
               <button type="submit">edit skill</button>
             </form> 
-          
-          <form action="/students/<%=students.id%>" method="delete">   
-            <button type="submit">delete skill</button> 
-          </form>
+            
+            <form action="/students/<%=students.id%>/delete" method="post">   
+              <button type="submit">delete skill</button>
+            </form>
 
-          <form action="/students/<%=students.id%>" method="post">
-            <button type="submit">add skill</button>
-          </form>
-        </div>        
-
+            <form action="/students/<%=students.student_id%>/new" method="post">
+              <button type="submit">add skill</button>
+            </form>
+          </div>      
         <% }) %>
     </body>
 </html>

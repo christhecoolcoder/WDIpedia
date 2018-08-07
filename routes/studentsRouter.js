@@ -1,19 +1,23 @@
 const express = require('express');
 // const { Converter }  = require('showdown');
 
-const controller = require('../controllers/studentsController');
+const studentController = require('../controllers/studentsController');
 const views = require('../controllers/resHandler');
 
 const studentsRouter = express.Router();
 
 studentsRouter.route('/')
-  .get(controller.index, views.showAll);
+  .get(studentController.index, views.showAll);
 
-studentsRouter.route('/:id')
-  .post(controller.createNewSkill, controller.index, views.handleCreate);
+studentsRouter.route('/:id/edit')
+  .post(studentController.createNewSkill, studentController.index, views.handleCreate);
 
-// studentRouter.route('/new')
-//     .get(views.handleCreate);
+studentsRouter.route('/:id/delete')
+  .post(studentController.deleteSkill, studentController.index, views.handleCreate);
+
+studentsRouter.route('/:id/new')
+  .post(studentController.addNewSkill, studentController.index, views.handleCreate);
+
 
 // studentRouter.route('/:id')
 //     .get(controller.getOne, views.showOne, views.show404);
