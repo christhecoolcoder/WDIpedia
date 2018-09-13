@@ -1,17 +1,20 @@
-const pgp = require('pg-promise')();
+// module.exports = {
+//   host: process.env.DB_HOST || 'localhost',
+//   port: process.env.DB_PORT || 5432,
+//   database: process.env.DB_NAME || 'wdipedia',
+// };
 
-let db;
+/**
+ * @module dbConfig
+ * @desc this file contains all the connection strings
+ * to connect to the database server
+ */
 
-if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-  db = pgp({
-	// custom database name
-	database: 'wdipedia', 
-	port: 5432,
-	host: 'localhost',
-  });
-} else if (process.env.NODE_ENV === 'production') {
-	// Heroku will add this
-	db = pgp(process.env.DATABASE_URL); 
-}
-
-module.exports = db;
+// Our database is either at some URL,
+// or configured at some host:port
+// TODO: [1] Export your database config
+module.exports = process.env.DATABASE_URL || {
+  host:     'localhost',
+  port:     5432,
+  database: 'wdipedia',
+};
