@@ -5,7 +5,7 @@ module.exports = {
     return studentsdb
       .findAll().then((students) => {
         students.sort((studentA, studentB) => studentA.id - studentB.id);
-
+        
         res.locals.students = students,
 
         next();
